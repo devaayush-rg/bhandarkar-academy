@@ -1,0 +1,491 @@
+/* ===================================================
+   Global Reset & Base Styles
+   =================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}
+
+/* ===================================================
+   Layout Utility
+   =================================================== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===================================================
+   Navigation
+   =================================================== */
+nav {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+
+nav .nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+nav .nav-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ===================================================
+   Footer
+   =================================================== */
+footer {
+  background: #1a1a2e;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+/* ===================================================
+   Page wrapper
+   =================================================== */
+.page {
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.page h2 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.page p {
+  margin-bottom: 0.75rem;
+}
+
+/* ===================================================
+   Announcements Section
+   =================================================== */
+.announcements-section {
+  margin-top: 2.5rem;
+}
+
+.announcements-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #1a1a2e;
+  padding-bottom: 0.4rem;
+}
+
+.announcements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.announcement-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.announcement-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.announcement-card-body {
+  padding: 0.85rem;
+}
+
+.announcement-card-body h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.announcement-card-body p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.empty-message {
+  color: #666;
+  font-style: italic;
+}
+
+.loading-message {
+  color: #555;
+}
+
+/* ===================================================
+   Forms (Admin)
+   =================================================== */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group .checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+}
+
+/* ===================================================
+   Buttons
+   =================================================== */
+button,
+.btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid #333;
+  border-radius: 3px;
+  background: #fff;
+  color: #333;
+}
+
+button:hover,
+.btn:hover {
+  background: #f0f0f0;
+}
+
+button.btn-primary {
+  background: #1a1a2e;
+  color: #fff;
+  border-color: #1a1a2e;
+}
+
+button.btn-primary:hover {
+  background: #16213e;
+}
+
+button.btn-danger {
+  background: #c0392b;
+  color: #fff;
+  border-color: #c0392b;
+}
+
+button.btn-danger:hover {
+  background: #a93226;
+}
+
+button.btn-sm {
+  padding: 0.3rem 0.65rem;
+  font-size: 0.82rem;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===================================================
+   Alerts / Messages
+   =================================================== */
+.alert {
+  padding: 0.65rem 0.85rem;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.alert-error {
+  background: #fdecea;
+  border: 1px solid #e74c3c;
+  color: #922b21;
+}
+
+.alert-success {
+  background: #eafaf1;
+  border: 1px solid #2ecc71;
+  color: #1a5e34;
+}
+
+/* ===================================================
+   Admin Dashboard — Announcement List
+   =================================================== */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-section {
+  margin-bottom: 2.5rem;
+}
+
+.admin-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.4rem;
+}
+
+.announcement-list {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.announcement-list-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.announcement-list-item:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.announcement-list-item:nth-child(even) {
+  background: #fafafa;
+}
+
+.announcement-item-info {
+  flex: 1;
+  min-width: 180px;
+}
+
+.announcement-item-info strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.announcement-item-info span {
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-right: 0.4rem;
+}
+
+.badge-visible {
+  background: #eafaf1;
+  color: #1a5e34;
+  border: 1px solid #2ecc71;
+}
+
+.badge-hidden {
+  background: #fdecea;
+  color: #922b21;
+  border: 1px solid #e74c3c;
+}
+
+.announcement-item-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ===================================================
+   Modal Overlay
+   =================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 5px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal h2 {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+/* ===================================================
+   Admin Login Page
+   =================================================== */
+.login-page {
+  max-width: 380px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login-page h1 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ===================================================
+   Courses Grid
+   =================================================== */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.course-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.course-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.course-card p {
+  font-size: 0.88rem;
+  color: #555;
+}
+
+/* ===================================================
+   Contact form
+   =================================================== */
+.contact-form {
+  max-width: 520px;
+  margin-top: 1rem;
+}
+
+/* ===================================================
+   Hero Section
+   =================================================== */
+.hero {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto;
+}
